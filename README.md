@@ -11,6 +11,8 @@ Key Files:
 
 * scrape_mars_output.txt - Example results from scraping sent to an output txt file through print. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/scrape_mars_output.txt
 
-* mars_flask_app.py - Flask app running the website, providing endpoints including / and /scrape, and serving up dynamic content. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/mars_flask_app.py
+* MongoDB_Screenshot.png - Snapshot of MongoDB Compass App showing DB state after scraping. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/MongoDB_Screenshot.png
+
+* mars_flask_app.py - Flask app running the website, providing endpoints including "/" and "/scrape". It serves up dynamic content generated based on the template with DB content merged in. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/mars_flask_app.py
 
 * Mars_Conditions_Website.pdf - Printout of website to PDF file. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/Mars_Conditions_Website.pdf
