@@ -50,8 +50,8 @@ def scrape():
     # time.sleep(5)  # Give time for the browser to come up.
     soup = BeautifulSoup(browser.html, 'lxml')
     result = soup.find_all('a', class_="fancybox")
-    result[1]  # result[0] is the page banner image which isn't necessarily Mars! Therefore, use the next image.
-    jpg_url = 'https://www.jpl.nasa.gov' + result[1].get('data-fancybox-href')
+    # result[0] is the page banner image which isn't necessarily Mars! Therefore, use the next image.
+    jpg_url = 'https://www.jpl.nasa.gov' + result[25].get('data-fancybox-href')
     print(jpg_url)
     print()
     d['JPL_image_URL'] = jpg_url
