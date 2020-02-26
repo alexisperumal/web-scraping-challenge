@@ -1,7 +1,7 @@
 # web-scraping-challenge
 UCSD Data Science Bootcamp HW 12
 
-Scape data on Mars from multiple websites, store it in a db, and with Flask and bootstrap create a new aggregator website publishing that data.
+Scape data on Mars from multiple websites, store it in a Mongo db, and with Flask and bootstrap create a new aggregator website publishing that data. The website has an endpoint (triggered by a button on the home page) to rescrape and refresh itself.
 
 Key Files:
 
@@ -13,4 +13,4 @@ Key Files:
 
 * mars_flask_app.py - Flask app running the website, providing endpoints including / and /scrape, and serving up dynamic content. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/mars_flask_app.py
 
-* Mars Conditions Website.pdf - Printout of website to PDF file. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/Mars%20Conditions%20Website.pdf
+* Mars_Conditions_Website.pdf - Printout of website to PDF file. https://github.com/alexisperumal/web-scraping-challenge/blob/master/Missions_to_Mars/Mars_Conditions_Website.pdf
