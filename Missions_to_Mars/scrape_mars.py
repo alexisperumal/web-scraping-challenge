@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 import time
 import pandas as pd
 import pprint as pp
+# from flask import Markup
 
 def scrape():
 
@@ -24,7 +25,7 @@ def scrape():
     # !which chromedriver
 
     executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
     # Step 1.1: Retrieve NASA Mars News
     print("Step 1.1: Mars News")
@@ -63,6 +64,7 @@ def scrape():
     browser.visit(tweet_url)
     # browser.click_link_by_partial_text('Mars Weather')
     browser.links.find_by_partial_text('Mars Weather').click()
+    time.sleep(5)  # Give time for the browser to come up.
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
     result = soup.find_all('div', class_="css-901oao r-jwli3a r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-bnwqim r-qvutc0")
@@ -76,12 +78,12 @@ def scrape():
 
 
     # Step 1.4: Mars Facts
-
     print("Step 1.4: Mars Facts")
     url = 'https://space-facts.com/mars/'
     mars_facts_df = pd.read_html(url)[0]
-    mars_facts_html = mars_facts_df.to_html()
+    mars_facts_html = mars_facts_df.to_html(index=False, header=False)
     print(mars_facts_df)
+    print(mars_facts_html)
     print()
     d['facts_table_html'] = mars_facts_html
 
@@ -96,7 +98,6 @@ def scrape():
     soup = BeautifulSoup(html, 'lxml')
     hemisphere_image_urls = []
     result_list = soup.find_all('div', class_='item')
-
     # Get Image Titles
     for result in result_list:
         title = result.find('h3').text
